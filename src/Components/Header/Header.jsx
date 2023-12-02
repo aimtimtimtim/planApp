@@ -21,7 +21,7 @@ export default function Header() {
         <a
           className="header__link"
           target="_blank"
-          href="https://github.com/agayevTim"
+          href="https://github.com/atdev03"
         >
           My GitHub
         </a>

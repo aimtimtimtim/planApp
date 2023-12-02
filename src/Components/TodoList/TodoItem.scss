@@ -1,0 +1,38 @@
+.todos__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #26292b;
+    border-radius: 10px;
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    &.removing {
+        transform: translateX(-800px);
+        opacity: 0%;
+    }
+    &:hover {
+        background-color: #2a2e31;
+        border-radius: 10px;
+    }
+}
+.todos__title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.todos__btn {
+    border: 1px solid #f96767;
+    padding: 10px;
+    color: #f96767;
+    border-radius: 10px;
+    background: transparent;
+    transition:
+        background-color 0.4s ease,
+        transform 0.8s;
+    &:hover {
+        transform: scale(110%);
+        background-color: #f96767;
+        color: white;
+    }
+}

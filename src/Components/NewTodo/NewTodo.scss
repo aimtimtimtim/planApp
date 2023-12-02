@@ -1,0 +1,54 @@
+.newtodo {
+    max-width: 482px;
+    margin: 120px auto 0;
+    text-align: center;
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    &__form {
+        margin-top: 20px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        gap: 15px;
+    }
+    &__input {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        background: transparent;
+        font-size: 16px;
+        color: #777;
+        &:focus {
+            color: white;
+        }
+    }
+    &__btn {
+        font-size: 18px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        padding: 10px;
+        color: white;
+        background-color: transparent;
+        transition:
+            background-color 0.4s ease,
+            transform 0.8s;
+        &:hover {
+            transform: scale(110%);
+            background-color: white;
+            color: #777777;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .newtodo__form {
+        flex-direction: column;
+    }
+    .newtodo__input {
+        max-width: 100%;
+    }
+}

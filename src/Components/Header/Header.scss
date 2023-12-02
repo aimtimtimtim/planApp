@@ -1,0 +1,58 @@
+.header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        font-size: 36px;
+        color: white;
+        font-weight: 700;
+    }
+    &__news {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        color: #61dafb;
+        transition: transform 0.7s ease;
+        cursor: pointer;
+        &:hover {
+            transform: scale(105%);
+            background-color: #2a2e31;
+            border-radius: 10px;
+        }
+    }
+    &__togithub {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 10px;
+        transition: transform 0.7s ease;
+        &:hover {
+            transform: scale(105%);
+            background-color: #2a2e31;
+            border-radius: 10px;
+        }
+    }
+    &__link {
+        color: #61dafb;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        margin-top: 25px;
+        &__logo {
+            font-size: 22px;
+            color: white;
+            font-weight: 700;
+        }
+        &__link {
+            color: #61dafb;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.todos {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+    scrollbar-width: thin;
+    margin-bottom: 20px;
+
+    &__isempty {
+        color: #777;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 120%;
+        margin-top: 20px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    @media (max-width: 360px) {
+        .todos__isempty {
+            font-size: 22px;
+        }
+    }
+}

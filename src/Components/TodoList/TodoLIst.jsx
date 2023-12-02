@@ -4,7 +4,13 @@ export default function TodoList({ todos, deleteTodo }) {
   const todoElements = []
   for (const todo of todos) {
     todoElements.push(
-      <TodoItem key={todo.id} id={todo.id} title={todo.title} deleteTodo={deleteTodo} />
+      <TodoItem
+        key={todo.id}
+        id={todo.id}
+        title={todo.title}
+        date={todo.date}
+        deleteTodo={deleteTodo}
+      />
     )
   }
   return (

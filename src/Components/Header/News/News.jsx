@@ -15,7 +15,9 @@ export default function News({ toggleNews }) {
         <h2>Updates of YourPlan</h2>
         <div className="modal__update">
           <h4 className="modal__update-title">Version 1.00.1</h4>
-          <p className="modal__update-desc">Now you can save your todos!</p>
+          <p className="modal__update-desc">
+            Now you can save your todo! Also we added saving time.
+          </p>
         </div>
 
         <div className="modal__btn-area">

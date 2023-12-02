@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 import './TodoItem.scss'
-export default function TodoItem({ id, title, deleteTodo }) {
+export default function TodoItem({ id, title, date, deleteTodo }) {
   const itemRef = useRef(null)
 
   function del() {
@@ -11,12 +11,16 @@ export default function TodoItem({ id, title, deleteTodo }) {
 
     setTimeout(() => {
       deleteTodo(id)
-    }, 500)
+    }, 300)
   }
   return (
-    <li className="todos__item" ref={itemRef}>
-      <p className="todos__title">{title}</p>
-      <button className="todos__btn" onClick={del}>
+    <li className="todo" ref={itemRef}>
+      <div className="todo__info">
+        <p className="todo__title">{title}</p>
+        <p className="todo__date">{date}</p>
+      </div>
+
+      <button className="todo__btn" onClick={del}>
         Delete
       </button>
     </li>

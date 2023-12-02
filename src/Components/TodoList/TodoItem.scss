@@ -1,4 +1,4 @@
-.todos__item {
+.todo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,23 +16,32 @@
         background-color: #2a2e31;
         border-radius: 10px;
     }
-}
-.todos__title {
-    font-size: 18px;
-    font-weight: 600;
-}
-.todos__btn {
-    border: 1px solid #f96767;
-    padding: 10px;
-    color: #f96767;
-    border-radius: 10px;
-    background: transparent;
-    transition:
-        background-color 0.4s ease,
-        transform 0.8s;
-    &:hover {
-        transform: scale(110%);
-        background-color: #f96767;
-        color: white;
+    &__title {
+        text-align: start;
+        word-break: break-all;
+        padding-right: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    &__date {
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: start;
+        color: #777;
+    }
+    &__btn {
+        border: 1px solid #f96767;
+        padding: 10px;
+        color: #f96767;
+        border-radius: 10px;
+        background: transparent;
+        transition:
+            background-color 0.4s ease,
+            transform 0.8s;
+        &:hover {
+            transform: scale(110%);
+            background-color: #f96767;
+            color: white;
+        }
     }
 }

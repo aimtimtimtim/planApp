@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-React
 import './NewTodo.scss'
 
 export default function NewTodo({ saveTodo }) {
@@ -8,12 +7,26 @@ export default function NewTodo({ saveTodo }) {
   function saveTodoTitle(event) {
     setInput(event.target.value)
   }
+
+  function formatDate(date) {
+    const optionsDateTime = {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    }
+    const formattedDateTime = date.toLocaleString('ru-RU', optionsDateTime)
+    return formattedDateTime
+  }
   function save(event) {
     event.preventDefault()
     const todo = {
       title: input,
+      date: formatDate(new Date()),
       id: Math.floor(Math.random() * 1000 + 1).toString(),
     }
+
     if (todo.title !== '') {
       saveTodo(todo)
     }

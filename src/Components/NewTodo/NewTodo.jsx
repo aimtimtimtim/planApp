@@ -1,12 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import './NewTodo.scss'
 
 export default function NewTodo({ saveTodo }) {
-  const [input, setInput] = useState('')
-
-  function saveTodoTitle(event) {
-    setInput(event.target.value)
-  }
+  const inputRef = useRef()
 
   function formatDate(date) {
     const optionsDateTime = {
@@ -19,20 +15,20 @@ export default function NewTodo({ saveTodo }) {
     const formattedDateTime = date.toLocaleString('ru-RU', optionsDateTime)
     return formattedDateTime
   }
+
   function save(event) {
     event.preventDefault()
-    const todo = {
-      title: input,
-      date: formatDate(new Date()),
-      id: Math.floor(Math.random() * 1000 + 1).toString(),
-    }
-
-    if (todo.title !== '') {
+    const { value } = inputRef.current
+    if (value !== '') {
+      const todo = {
+        title: value,
+        date: formatDate(new Date()),
+        id: Math.floor(Math.random() * 1000 + 1).toString(),
+      }
       saveTodo(todo)
+      inputRef.current.value = ''
     }
-    setInput('')
   }
-
   return (
     <div className="newtodo">
       <p className="newtodo__title">Add new Todo</p>
@@ -41,8 +37,7 @@ export default function NewTodo({ saveTodo }) {
           className="newtodo__input"
           placeholder="Enter text"
           type="text"
-          onChange={saveTodoTitle}
-          value={input}
+          ref={inputRef}
         />
         <button className="newtodo__btn" type="submit">
           Add

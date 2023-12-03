@@ -1,18 +1,15 @@
 import TodoItem from './TodoItem'
 import './TodoList.scss'
 export default function TodoList({ todos, deleteTodo }) {
-  const todoElements = []
-  for (const todo of todos) {
-    todoElements.push(
-      <TodoItem
-        key={todo.id}
-        id={todo.id}
-        title={todo.title}
-        date={todo.date}
-        deleteTodo={deleteTodo}
-      />
-    )
-  }
+  const todoElements = todos.map((todo) => (
+    <TodoItem
+      key={todo.id}
+      id={todo.id}
+      title={todo.title}
+      date={todo.date}
+      deleteTodo={deleteTodo}
+    />
+  ))
   return (
     <div className="todos">
       {todos.length === 0 && (
